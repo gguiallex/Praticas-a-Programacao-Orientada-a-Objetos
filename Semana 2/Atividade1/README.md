@@ -28,6 +28,7 @@ implementar nessa classe:
 
 Por fim, no método main da classe App, utilize os métodos criados na classe TagPedagio para
 realizar as seguintes tarefas:
->>I. Crie uma tag informando apenas a placa "ABC1D23". Em seguida, utilize essa tag para tentar passar em um pedágio que custa R$ 15,00.
->>II. Crie uma outra tag informando a placa "EFG4H56" e um valor de crédito de R$ 20,00. Em seguida, atualize o saldo dessa tag colocando mais R$ 15,00 de crédito. Por fim, utilize essa tag para tentar passar em um pedágio que custa R$ 23,00.
+>> I. Crie uma tag informando apenas a placa "ABC1D23". Em seguida, utilize essa tag para tentar passar em um pedágio que custa R$ 15,00.
+>> II. Crie uma outra tag informando a placa "EFG4H56" e um valor de crédito de R$ 20,00. Em seguida, atualize o saldo dessa tag colocando mais R$ 15,00 de crédito. Por fim, utilize essa tag para tentar passar em um pedágio que custa R$ 23,00.
+
 Obs.: Não usar inferência de tipo nem expressão lambda na sua implementação.
