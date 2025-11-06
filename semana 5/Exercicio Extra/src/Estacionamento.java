@@ -9,6 +9,10 @@ public class Estacionamento {
         carros = new ArrayList<>();
     }
 
+    public String getNome(){
+        return nome;
+    }
+
     public void adicionarCarro(String nome, String marca, String placa){
         carros.add(new Carro(nome, marca, placa));
     }
@@ -22,7 +26,6 @@ public class Estacionamento {
     }
 
     public void imprimirCarros(){
-        System.out.println("Carros no " + nome);
         for(Carro c : carros){
             System.out.println("Carro:" + c.getMarca() + " " + c.getModelo() + " Placa: " + c.getPlaca());
         }

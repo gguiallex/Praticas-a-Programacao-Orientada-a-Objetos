@@ -1,0 +1,25 @@
+1 - a) Ocorre um erro no qual o programa para de funcionar, pois ao escolher a opção de depositar antes de criar qualquer conta. Ao escolher essa opçao, ele pede o numero da conta no qual quer depositar o valor desejado, e ao não conseguir encontrar nenhuma conta, não jhá nenhum retorno de que a conta não foi encontrada, fazendo assim com que o aplicativo pare de funcionar
+
+b) O mesmo ocorre para os métodos de Sacar e Transferir, ocorrendo do mesmo problema!
+
+2 - a) Não ocorre nenhum erro ao escolher as opções 3, 4 e 5 antes de criar qualquer conta, pois na segunda versão do codigo, a ação só é realizada se a conta for encontrada, caso contrario é retornado null.
+
+b) Não há como o usuário saber que a operação não foi realizada com sucesso, porque apesar da aplicação não retornar nenhum erro, ela não tem nenhum retorno/aviso notificando o que foi feito, apenas é retornado para a pagina inicial do menu, deixando assim o usuário confuso se algo foi realizado ou não.
+
+c) modificações no arquivo agencia da pasta atividade2.
+
+3 - a) O usuário recebe a mensagem de erro definida na classe Agencia:
+Para deposito: "ERRO: Conta não foi encontrada."
+Para saque: "ERRO: Conta não foi encontrada."
+
+b) O usuário recebe a mensagem definida no metodo sacar da classe conta: "ERRO: Saldo insuficiente para realizar o saque." 
+
+c) O usuario recebe a mensagem definida no metodo transferir da classe Agencia: "ERRO: Conta de origem não encontrada."
+
+d) Ao tentar transferir de uma conta válida para uma inexistente, o sistema exibe a mensagem incorreta de "Transferencia realizada com sucesso..." porque o método sacar funciona, retirando o dinheiro da conta de origem, entretanto a tentativa de depositar na conta de destino gera um erro, já que é nula. Esse erro é capturado por um bloco try-catch dentro da classe Conta, que não informa a falha para o Menu. O Menu não recebe nenhum erro e assume que a operação foi um sucesso. O saldo da conta de origem não fica errado, pois o mesmo bloco catch que esconde o erro também reverte o saque, garantindo que o dinheiro não seja perdido.
+
+e) O usuário receberá duas linhas: primeiro a mensagem da NullPointerException seguida pela mensagem "Transferencia realizada com sucesso...". Adicionar um println apenas exibe a mensagem da exceção no console, mas não muda o fluxo de controle. Portanto o programa continua a execução normalmente e imprime a mensagem de sucesso.
+
+f) modificações no arquivo agencia da pasta atividade3.
+
+g) a mensagem exibida é "Transferência realizada com sucesso..." mas continua incorreto. Isso ocorre porque o erro de "saldo insuficiente", gerado pelo método sacar, é capturado por um bloco try-catch dentro do método transferir (na classe Conta), mas não é relançado. Como o erro é "engolido", o Menu não fica sabendo da falha e assume que a operação foi bem sucessida. A correção é adicionar o comando throw e; ao final do bloco catch no método transferir da classe Conta. Isso força a propagação do erro até o Menu, garantindo que o usuário receba a mensagem correta: "ERRO: Saldo insuficiente para realizar o saque".
